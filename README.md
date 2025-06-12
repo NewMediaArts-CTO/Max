@@ -1,4 +1,5 @@
-Max is a project of New Media Arts, Inc., a foundation, tax exempt under IRC 501(c)(3). Donations to our endowment can be sent via PayPal, treasurer@newmediaarts.org. 
+Max is a project of New Media Arts, Inc., a foundation, tax exempt under IRC 501(c)(3). Donations to our endowment can be sent via PayPal, treasurer@newmediaarts.org.
+
 The Max project has several components:
 
   Develop templates for new viewer avatars for the OpenSim communities - changes to the Viewer Character xml files to improve the 2005 LL avatar - mesh, armature, vertex weighting, texturing, found in the LLM, xml and texture files.
