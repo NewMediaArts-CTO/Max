@@ -1,0 +1,73 @@
+Max  DRAFT DRAFT DRAFT
+
+Background: I have been working on free mesh avatar bodies since around 2017 with several teams. A few years on the RuthAndRoth project, based on the Shin Ingen models, with Austin Tate and Serie Serai and quite a few Blender modelers, and for the last few years on a New Viewer Avatar (NVA). Kayaker Magic and I presented it at the 2022 OSCC. That project is on hold; we need a Python programmer, although I've been doing some revisions.
+
+This is Max, a template for making mesh bodies and other attachments. The topology is closely matched to the Linden system avatar, except with modeled teeth, ears and feet. I have been re-weighting the mesh I developed for NVA to work with the inworld Appearance sliders, aka "fitted mesh".  It's meant to be a template for other mesh designers to make a variety of mesh body shapes. 
+
+Free, under Creative Commons 4.0, which means you must attribute me (Ada Radius) and any other contributors, and provide a link back to the original at https://github.com/NewMediaArts-CTO/Max/tree/main/Max%20Mesh%20Body, and to the license at https://creativecommons.org/licenses/by-sa/4.0/deed.en. Other than that, do whatever you want with it - give it away, sell it, make things to give away or sell.
+
+I am not providing individual support - I don't have time. There is a channel at the New Media Arts Discord server if you want to ask or answer questions. https://discord.gg/cwZCShN2Z3
+
+Max can convert from female to male via shape keys, and I added some shape keys, based on the LL mesh morphs, that might be useful for making mesh attachments. The skeleton morphs (height, bone length) are not included.
+
+Max is mapped to the SL UV maps, which makes them Bakes on Mesh compatible.
+
+They are rigged to the SL armature, as defined in viewer/Character/avatar_skeleton.xml. Skinned and vertex weighted based on, in this order: 1) the llm file vertex weights, 2) the parameters outlined in avatar_lad.xml for mesh attachments 3) the volume parameters in avatar_lad.xml for volume weighting
+
+I used Robin Woods' UV mapping templates from 2005, with her permission for the RuthAndRoth project. These templates closely match the original UV maps, with a useful overlay for projects like this. Every skin designer has used them since - they make more sense of the LL topology and UV mapping than anything can, I think.
+
+All of the data included here comes from viewer/Character files, plus my retopology of the system mesh. Max is weighted primarily to the collision/volume bones, e.g. "fitted" weights, that will morph with most of the Appearance sliders. Vertex weighting for mesh attachments can be largely a matter of taste, particularly "fitted" mesh. The topology is not perfect, because I had to model for compatibility to the UV maps and to the armature. I used the spreadsheets in MeshAttachmentWeightingReferenceV1.1.ods to guide my vertex weight decisions. 
+
+This is advanced Blender work. Not actually difficult, but requires some detailed understanding of rigging, vertex weighting, UV mapping, and shape keys. There are quite a few tutorials out there to help. If you're a beginner, don't be discouraged, but also don't expect to get it all immediately. 
+
+I'm hoping that if I'm not able to keep up with updates, that someone else will, and donate it back to this project. But it's not a requirement. 
+
+ 
+Currently: 
+
+This mesh body can be edited to whatever shape you want and it should work as fitted mesh:
+as long as you don't change the armature
+as long as you don't change the position of the eyes
+as long as the fingers still line up with the finger bones
+as long as the feet still line up with mAnkle and mFoot
+
+re feet: I fit Max's feet to the OpenSim/Sl armature, so that the foot bends at the ball of the foot, at the mFoot joint. This makes for a smaller foot, close to the 00 size that most female avs set the size of their, feet, so they fit into available shoes. Not particularly realistic, but it deforms better. It's nowhere near the much larger size of the SLink and other popular feet and shoes - those feet, if deformed back to flat, would be about a women's size 12.
+
+You will probably need to adjust the vertex weights if you reshape the mesh.
+If you move the eye position, Bento head weights won't work well.
+If you split the head from the upper body, you'll definitely need to fix weights at the seam, usually by assigning the edge loops to mNeck. Same for the split from upper body to lower body, mTorso.
+
+If you make changes to the armature, you'll need to check the box "joints" on upload, and then most of the Appearance sliders won't work. That can be a good choice for alternate bodies, such as weefolk, but you should to reassign weights from the collision/volume bones to mBones.  
+
+If you are making animesh, you can break all of the above rules - edit the armature, edit the mesh. 
+
+BE CAREFUL not to edit your mesh if you have a shape slider selected. You must have the top level "Basis" selected while editing. Unless you're editing the shape itself, which will have limitations (you'll find them) but won't affect the Basis model nor the other shape keys. 
+
+I mostly use Sculpt mode while making or editing shape keys. Its easier. 
+
+
+
+TO DO
+ -X, Z to export rigged mesh, see Zai's instructions
+
+remodel mouth bag based on cheeks
+
+separate eyebrow mesh?
+
+fix eyelash weights, join to head I think
+
+remodel the eyes so they fit under the eyelids better
+
+test morphs with RW or skin textures
+
+make LOD drafts
+
+
+last updated Ada Radius 2025-06-12
+
+
+
+
+
+
+
